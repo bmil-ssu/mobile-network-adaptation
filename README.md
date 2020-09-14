@@ -20,9 +20,9 @@
 
 - 실험 전 세팅 (multicast 방식)
 1. 실험에 사용되는 모든 8개의 xbee를 XCTU라는 프로그램을 이용하여 채널을 통일시킨다
-2. 노트북에 source node에 해당하는 xbee 1개를 포트에 꽂고, source_node_multicast ver.py를 Pycharm에서 실행시킨다.
-3. relay node에 해당하는 xbee를 각각의 rc카와 연결한 라즈베리파이 포트에 꽂고, 라즈베리파이에서 각각 xbee 넘버(n)에 해당하는 relay_node_multicast ver.py를 auto-running.
-4. 각 relay node 마다 예제 코드에서 ID_LIST for multicast. png 파일을 참고하여 다음과 같이 수정하면 된다.
+2. 노트북에 source node에 해당하는 xbee 1개를 포트에 꽂고, source_node_multicast.py를 Pycharm에서 실행시킨다.
+3. relay node에 해당하는 xbee를 각각의 rc카와 연결한 라즈베리파이 포트에 꽂고, 라즈베리파이에서 각각 xbee 넘버(n)에 해당하는 relay_node_multicast_mobility.py를 auto-running.
+4. 각 relay node 마다 예제 코드에서 topology. png 파일을 참고하여 다음과 같이 수정하면 된다.
 line 13에서 ID_LIST 수정
 line 86에서 node_num 수정
 ex) relay node 01 에서 ID_LIST는 "03, 04"로 수정
@@ -31,8 +31,8 @@ ex) relay node 01 에서 node_num은 "01"로 수정
 
 - 실험 전 세팅 (broadcast 방식)
 1. 실험에 사용되는 모든 8개의 xbee를 XCTU 프로그램을 이용하여 채널을 통일시킨다
-2. 노트북에 source node에 해당하는 xbee 1개를 포트에 꽂고, source_node_broadcast ver.py를 Pycharm에서 실행시킨다.
-3. relay node에 해당하는 xbee를 각각의 rc카와 연결한 라즈베리파이 포트에 꽂고, 라즈베리파이에서 각각 xbee 넘버(n)에 해당하는 relay_node_broadcast ver.py를 auto-running.
+2. 노트북에 source node에 해당하는 xbee 1개를 포트에 꽂고, source_node_broadcast.py를 Pycharm에서 실행시킨다.
+3. relay node에 해당하는 xbee를 각각의 rc카와 연결한 라즈베리파이 포트에 꽂고, 라즈베리파이에서 각각 xbee 넘버(n)에 해당하는 relay_node_broadcast_mobility.py를 auto-running.
 
 
 - 야외 실험 방법(multicast 방식과 broadcast 방식 모두 동일)
