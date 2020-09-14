@@ -7,7 +7,7 @@ def coordinator():
     BAUD_RATE = 9600 #boundary rate
     PL = ["POWER_LEVEL0", "POWER_LEVEL1", "POWER_LEVEL2", "POWER_LEVEL3", "POWER_LEVEL4"] #the list of power level
     PM = ["POWER_MODEOFF", "POWER_MODEON"] #the list of power mode
-    ID_LIST = ["01","02"] #the list of the names of remote devices
+    ID_LIST = ["01","02"] #the list of nodes you want to send data
     length = 0 #the number of remote deives
     device = XBeeDevice(PORT, BAUD_RATE) #select xbee device
     his = ["00"] #to record the list of xbee number that comes through
