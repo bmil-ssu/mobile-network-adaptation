@@ -5,7 +5,7 @@
    Ad-hoc network formation with random mobility
 
  ## 발명자 리스트
-   이현희, 박서연, 박지현
+   이현희, 박서연, 박지현, 김나영, 박형곤, 권민혜
    
 ## 프로그램 전반적인 목적
 
