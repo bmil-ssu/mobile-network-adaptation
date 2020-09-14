@@ -37,36 +37,21 @@ def data_receive_callback(xbee_message):  # when received input(data packet),fun
         if neighbor < 2:  # to prevent repeating sending data, limit the range
             n = open('neigh_history.txt', 'a')  # to record the neighbor history
             n.write(str(neighbor) + "\n")  # insert the space
-            n.close()  # close the neigh_history.txt file
-            send_time = []  # to make send_time list
-            now = time.gmtime(time.time())  # record current time
-            send_time.append([now.tm_hour, now.tm_min, now.tm_sec])
-            t = open('time_history.txt', 'a')  # open the time_history file and record the time data
-            t.write(str(now.tm_hour) + ' ')
-            t.write(str(now.tm_min) + ' ')
-            t.write(str(now.tm_sec) + "\n")
-            t.close()
-
-            print("sending time:", send_time)
-
-            print("Sending packet:", pack)
+            n.close()  # close the neigh_history.txt file and then be saved automatically
             packet = json.dumps(pack)
             xbee_network = device.get_network()  # to transmit data, network should be generated
             xbee_network.clear()
-
             ser.close()
-
             device.set_parameter("PL", utils.int_to_bytes(0))  # set power level
             device.set_parameter("PM", utils.int_to_bytes(1))  # set power boost mode
 
             try:
-
                 time.sleep(5)  # timing issue solution
                 device.send_data_broadcast(packet)  # send the data using broadcast method
                 print("Success")
             except:
-                print("timeout")
-            neighbor = 0  # initialize # of neighbors
+                print("timeout") # if device can't transmit in timeout(4sec), print "timeout"
+            neighbor = 0  # initialize num of neighbors
 
 
 device.add_data_received_callback(data_receive_callback)  # when received input, callback function
