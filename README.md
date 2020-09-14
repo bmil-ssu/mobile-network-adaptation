@@ -41,4 +41,5 @@ ex) relay node 01 에서 node_num은 "01"로 수정
 3. 실험이 끝난 후에, destination node 코드 파일이 저장된 동일 위치에 생긴 ‘text.xlsx’ 파일을 통해 실험 결과를 확인한다.
 
 ## 프로그램 결과에 대한 설명
-
+'text.xlsx'에 source node, destination node, history, hops, message data 가 차례로 기록된다.
+![image](https://user-images.githubusercontent.com/67427006/93090534-d890ef00-f6d7-11ea-895b-a62f9ec31151.png)
