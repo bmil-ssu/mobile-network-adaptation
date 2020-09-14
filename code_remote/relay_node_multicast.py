@@ -10,7 +10,7 @@ PORT = "/dev/ttyUSB0"  # port number
 BAUD_RATE = 9600 # boundary rate
 PL = ["POWER_LEVEL0", "POWER_LEVEL1", "POWER_LEVEL2", "POWER_LEVEL3", "POWER_LEVEL4"] #the list of power level
 PM = ["POWER_MODEOFF", "POWER_MODEON"] #the list of power mode
-ID_LIST = ["03", "04"] #the list of the names of remote devices
+ID_LIST = ["03", "04"] #the list of nodes you want to send data
 length = 0 #the number of remote deives
 device = XBeeDevice(PORT, BAUD_RATE) #select xbee device
 ser = serial.Serial(PORT, BAUD_RATE) # set serial of xbee
@@ -77,13 +77,13 @@ def clockwise_mobility(): #function for random mobility
         up()
         t += 1
 ser.close()
-device.open() #device should be open to transmit data
+device.open() #device should be opened to transmit data
 while True:
     def data_receive_callback(xbee_message): # when received input(data packet), function works
         print("received packet: ", xbee_message.data.decode())
         response = xbee_message.data.decode() # parameter to represent received data
         received_packet = json.loads(response) # received data packet type str to list
-        node_num = "02" # specify the node number
+        node_num = "01" # my node number
         received_packet[2].append(node_num) #append node_num in history list
         received_packet[3] += 1 #add hop
         print("sending packet: ", received_packet)
